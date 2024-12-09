@@ -11,7 +11,11 @@
      {
        "route": "/.auth/login/github",
        "statusCode": 404
-     }
+     },
+     {
+       "route": "/admin",
+       "allowedRoles": ["administrator"]
+     },
    ],
    "networking": {
     "allowedIpRanges": [
