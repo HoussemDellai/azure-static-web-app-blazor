@@ -16,6 +16,10 @@
        "route": "/admin",
        "allowedRoles": ["administrator"]
      },
+     {
+       "route": "/contributor",
+       "allowedRoles": ["contributor"]
+     },
    ],
    "networking": {
     "allowedIpRanges": [
