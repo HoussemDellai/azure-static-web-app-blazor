@@ -1,23 +1,11 @@
 {
-  {
-    "routes": [
-    {
-      "route": "/login",
-      "redirect": "/.auth/login/aad"
-    },
-     // {
-     //   "route": "/*",
-     //   "allowedRoles": ["authenticated"]
-     // }
-    ],
-   // "responseOverrides": {
-   //   "401": {
-   //     "statusCode": 302,
-   //     "redirect": "/.auth/login/aad"
-   //   }
-    }
-  },
-  "networking": {
+  "routes": [
+     {
+       "route": "/login",
+       "redirect": "/.auth/login/aad"
+     },
+   ],
+   "networking": {
     "allowedIpRanges": [
       "10.0.0.0/24",
       "100.0.0.0/32",
