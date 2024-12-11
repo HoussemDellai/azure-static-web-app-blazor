@@ -20,6 +20,14 @@
        "route": "/contributor",
        "allowedRoles": ["contributor"]
      },
+     {
+      "route": "/reader",
+      "allowedRoles": ["reader"]
+    },
+    {
+      "route": "/profile",
+      "allowedRoles": ["reader, contributor, administrator, anonymous, authenticated"]
+    }
    ],
    "networking": {
     "allowedIpRanges": [
