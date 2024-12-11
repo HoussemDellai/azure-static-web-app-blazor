@@ -1,0 +1,37 @@
+﻿@using System.Text.Json;
+
+<h3>Profile</h3>
+
+<p>@clientPrincipal</p>
+
+@code {
+    
+    private string clientPrincipal;
+
+    // get user profile fro /.auth/me endpoint
+    private async Task GetProfile()
+    {
+        var httpClient = new HttpClient();
+        var response = await httpClient.GetAsync("/.auth/me");
+        var payload = await response.Content.ReadAsStringAsync();
+        var profile = JsonSerializer.Deserialize<Dictionary<string, string>>(payload);
+        // get user name
+        var clientPrincipal = profile["clientPrincipal"];
+        // get user email
+        // var email = profile["userRoles"];
+    }
+}
+
+
+@* {
+    "clientPrincipal": {
+        "identityProvider": "aad",
+        "userId": "31e2a7c170ae43c7985651eef09ce171",
+        "userDetails": "admin@MngEnvMCAP784683.onmicrosoft.com",
+        "userRoles": [
+            "contributor",
+            "anonymous",
+            "authenticated"
+        ]
+    }
+} *@
